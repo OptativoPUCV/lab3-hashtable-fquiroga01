@@ -16,6 +16,13 @@ struct HashMap {
     long current; //indice del ultimo dato accedido
 };
 
+struct HashNode
+{
+  char *key;
+  char *value;
+  struct HashNode *next;
+};
+
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
     new->key = key;
