@@ -82,7 +82,7 @@ void enlarge(HashMap * map)
     {
       if (antiguosBuckets[i] != NULL && antiguosBuckets[i]->key != NULL)
       {
-        insertMap(map, antiguosBuckets[i]);
+        insertMap(map, antiguosBuckets[i]->key, antiguosBuckets[i]);
       }
     }
   free(antiguosBuckets);
