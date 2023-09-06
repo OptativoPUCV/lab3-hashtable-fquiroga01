@@ -57,7 +57,7 @@ HashMap * createMap(long capacity)
   {
     return NULL;
   }
-  HashMap *map = (HashMap *) malloc (capacity * (sizeof(HashMap)));
+  HashMap *map = (HashMap *) malloc (sizeof(HashMap));
   if (map == NULL)
   {
     return NULL;
