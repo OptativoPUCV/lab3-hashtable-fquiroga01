@@ -2306,3 +2306,17 @@ hashmap.c:74:16: error: assignment to ‘Pair **’ from incompatible pointer ty
 cc1: all warnings being treated as errors
 Compilation failed
 ff1d367
+Wed 06 Sep 2023 11:26:11 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:74:28: error: too many arguments to function ‘malloc’
+   74 |   map->buckets = (Pair **) malloc (map->capacity, sizeof(Pair *));
+      |                            ^~~~~~
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:540:14: note: declared here
+  540 | extern void *malloc (size_t __size) __THROW __attribute_malloc__
+      |              ^~~~~~
+Compilation failed
+217ba24
