@@ -2127,3 +2127,17 @@ Wed 06 Sep 2023 02:53:30 AM UTC:
  tests:  11|2
 total_score: 50/70
 e6dc4a3
+Wed 06 Sep 2023 11:07:36 PM UTC: 
+ hashmap.c | 18 ++++++++++++++++--
+ 1 file changed, 16 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:142:23: error: comparison between pointer and integer [-Werror]
+  142 |   while (map->current != NULL)
+      |                       ^~
+hashmap.c:144:74: error: invalid type argument of ‘->’ (have ‘long int’)
+  144 |       if (map->buckets[map->current] != NULL || map->buckets[map->current->key != NULL])
+      |                                                                          ^~
+cc1: all warnings being treated as errors
+Compilation failed
+6775aba
