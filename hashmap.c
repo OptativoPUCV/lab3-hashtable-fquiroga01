@@ -46,7 +46,7 @@ void insertMap(HashMap * map, char * key, void * value)
   {
     return;
   }
-  if (search(map, key) != NULL)
+  if (searchMap(map, key) != NULL)
   {
     return;
   }
