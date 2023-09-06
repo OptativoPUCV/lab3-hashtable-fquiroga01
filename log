@@ -18,3 +18,21 @@ hashmap.c:65:1: error: control reaches end of non-void function [-Werror=return-
 cc1: all warnings being treated as errors
 Compilation failed
 7444356
+Wed 06 Sep 2023 02:10:51 AM UTC: 
+ hashmap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:65:17: error: assignment to ‘long int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   65 |   map->capacity = NULL;
+      |                 ^
+hashmap.c:67:19: error: ‘HashNode’ undeclared (first use in this function)
+   67 |   map->buckets = (HashNode *) calloc (capacity(sizeof(HashNode)));
+      |                   ^~~~~~~~
+hashmap.c:67:19: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:67:29: error: expected expression before ‘)’ token
+   67 |   map->buckets = (HashNode *) calloc (capacity(sizeof(HashNode)));
+      |                             ^
+cc1: all warnings being treated as errors
+Compilation failed
+b0f203e

@@ -62,6 +62,15 @@ HashMap * createMap(long capacity)
   {
     return NULL;
   }
+  map->capacity = NULL;
+  map->size = 0;
+  map->buckets = (HashNode *) calloc (capacity(sizeof(HashNode)));
+  if (map->buckets == NULL)
+  {
+    return NULL;
+  }
+  map->current = -1;
+  return map;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
