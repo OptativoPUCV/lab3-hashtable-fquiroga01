@@ -2185,3 +2185,14 @@ hashmap.c:144:89: error: expected statement before ‘)’ token
 cc1: all warnings being treated as errors
 Compilation failed
 d341cf9
+Wed 06 Sep 2023 11:09:25 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:142:23: error: comparison between pointer and integer [-Werror]
+  142 |   while (map->current != NULL)
+      |                       ^~
+cc1: all warnings being treated as errors
+Compilation failed
+c6f8416
