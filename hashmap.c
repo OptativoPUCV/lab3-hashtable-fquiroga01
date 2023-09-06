@@ -67,6 +67,7 @@ HashMap * createMap(long capacity)
   map->buckets = (HashNode **) calloc (capacity(sizeof(HashNode));
   if (map->buckets == NULL)
   {
+    free(map);
     return NULL;
   }
   map->current = -1;
