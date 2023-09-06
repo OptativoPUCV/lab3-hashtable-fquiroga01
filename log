@@ -2087,3 +2087,9 @@ hashmap.c:59:23: error: incompatible types when assigning to type ‘Pair *’ f
       |                       ^~~~~~~
 Compilation failed
 9756cb1
+Wed 06 Sep 2023 02:39:19 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|4
+total_score: 30/70
+b33d204
