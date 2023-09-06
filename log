@@ -1951,3 +1951,23 @@ test.c:100:6: error: ‘hash_test1’ defined but not used [-Werror=unused-funct
 cc1: all warnings being treated as errors
 Compilation failed
 41c1e98
+Wed 06 Sep 2023 02:24:37 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:74:47: error: called object ‘capacity’ is not a function or function pointer
+   74 |   map->buckets = (struct HashNode **) calloc (capacity(sizeof(struct HashNode)));
+      |                                               ^~~~~~~~
+hashmap.c:61:26: note: declared here
+   61 | HashMap * createMap(long capacity)
+      |                     ~~~~~^~~~~~~~
+hashmap.c:74:39: error: too few arguments to function ‘calloc’
+   74 |   map->buckets = (struct HashNode **) calloc (capacity(sizeof(struct HashNode)));
+      |                                       ^~~~~~
+In file included from test.c:2:
+/nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/stdlib.h:543:14: note: declared here
+  543 | extern void *calloc (size_t __nmemb, size_t __size)
+      |              ^~~~~~
+Compilation failed
+7f2981b
