@@ -71,7 +71,7 @@ void enlarge(HashMap * map)
   }
   Pair ** antiguosBuckets = map->buckets;
   map->capacity = map->capacity * 2;
-  map->buckets = (Pair **) malloc (map->capacity, sizeof(Pair *));
+  map->buckets = (Pair **) calloc (map->capacity, sizeof(Pair *));
   if (map->buckets == NULL)
   {
     map->capacity = map->capacity / 2;
