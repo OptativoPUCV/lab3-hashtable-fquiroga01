@@ -62,7 +62,7 @@ HashMap * createMap(long capacity)
   {
     return NULL;
   }
-  map->capacity = NULL;
+  map->capacity = capacity;
   map->size = 0;
   map->buckets = (Hash **) calloc (capacity(sizeof(Hash));
   if (map->buckets == NULL)
