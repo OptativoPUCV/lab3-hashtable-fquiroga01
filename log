@@ -2005,3 +2005,32 @@ Wed 06 Sep 2023 02:32:26 AM UTC:
  tests:  1|5
 total_score: 10/70
 965d970
+Wed 06 Sep 2023 02:38:17 AM UTC: 
+ hashmap.c | 21 +++++++++++++++++++--
+ 1 file changed, 19 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:49:7: error: implicit declaration of function ‘search’; did you mean ‘bsearch’? [-Werror=implicit-function-declaration]
+   49 |   if (search(map, key) != NULL)
+      |       ^~~~~~
+      |       bsearch
+hashmap.c:49:24: error: comparison between pointer and integer [-Werror]
+   49 |   if (search(map, key) != NULL)
+      |                        ^~
+hashmap.c:56:7: error: ‘position’ undeclared (first use in this function)
+   56 |       position = (position + 1) % map->capacity;
+      |       ^~~~~~~~
+hashmap.c:56:7: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:58:3: error: unknown type name ‘pair’; did you mean ‘Pair’?
+   58 |   pair newPair = createPair(key, value);
+      |   ^~~~
+      |   Pair
+hashmap.c:58:18: error: initialization of ‘int’ from ‘Pair *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   58 |   pair newPair = createPair(key, value);
+      |                  ^~~~~~~~~~
+hashmap.c:59:21: error: assignment to ‘Pair *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   59 |   map->buckets[pos] = newPair;
+      |                     ^
+cc1: all warnings being treated as errors
+Compilation failed
+950b3c3
