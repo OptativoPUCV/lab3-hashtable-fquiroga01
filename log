@@ -2141,3 +2141,25 @@ hashmap.c:144:74: error: invalid type argument of ‘->’ (have ‘long int’)
 cc1: all warnings being treated as errors
 Compilation failed
 6775aba
+Wed 06 Sep 2023 11:08:03 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:142:23: error: comparison between pointer and integer [-Werror]
+  142 |   while (map->current != NULL)
+      |                       ^~
+hashmap.c:144:88: error: expected ‘)’ before ‘]’ token
+  144 |       if (map->buckets[map->current] != NULL || map->buckets[map->current]->key != NULL])
+      |          ~                                                                             ^
+hashmap.c:144:88: error: expected statement before ‘]’ token
+hashmap.c:144:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  144 |       if (map->buckets[map->current] != NULL || map->buckets[map->current]->key != NULL])
+      |       ^~
+hashmap.c:144:89: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  144 |       if (map->buckets[map->current] != NULL || map->buckets[map->current]->key != NULL])
+      |                                                                                         ^
+hashmap.c:144:89: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+7958e60
