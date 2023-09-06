@@ -71,7 +71,7 @@ HashMap * createMap(long capacity)
   }
   map->capacity = capacity;
   map->size = 0;
-  map->buckets = (struct HashNode **) calloc (capacity, sizeof(struct HashNode));
+  map->buckets = (struct HashNode **) calloc (capacity, sizeof(struct HashNode *));
   if (map->buckets == NULL)
   {
     free(map);
