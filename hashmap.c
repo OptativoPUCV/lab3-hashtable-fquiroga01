@@ -62,11 +62,27 @@ void insertMap(HashMap * map, char * key, void * value)
 
 }
 
-void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
-
-
+void enlarge(HashMap * map) 
+{
+  enlarge_called = 1; //no borrar (testing purposes)
+  if (map == NULL)
+  {
+    return;
+  }
+  Pair ** antiguosBuckets = map->buckets;
+  map->capacity = map->capacity * 2;
+  map->buckets = (Pair) malloc (map->capacity, sizeof(Pair));
+  if (map->buckets == NULL)
+  {
+    map->capacity = map->capacity / 2;
+    return;
+  }
 }
+
+  
+
+
+
 
 
 HashMap * createMap(long capacity) 
